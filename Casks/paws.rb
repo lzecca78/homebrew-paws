@@ -2,7 +2,7 @@
 cask "paws" do
   desc ""
   homepage ""
-  version "0.1.5"
+  version "0.1.6"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,24 +12,36 @@ cask "paws" do
 
   on_macos do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.5/paws_0.1.5_darwin_amd64.tar.gz"
-      sha256 "b38a5d0d8f7e36aa60faa3d30f5c4860ad73c8eacdb2fc68dc82f61621244b9e"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_darwin_amd64.tar.gz"
+      sha256 "e37cf4b65af8e68c9b096fe042a50e1af5022d83f935d9ea647a23e61a5ab722"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.5/paws_0.1.5_darwin_arm64.tar.gz"
-      sha256 "f7d1abc6be5932ca151ebd0222fd06699db5c08784bd3110e5e3f1859a6a65f6"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_darwin_arm64.tar.gz"
+      sha256 "c02ec357ccbf813fde3725142f1b747686af1aefe251010fde016fb0d131a8a8"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.5/paws_0.1.5_linux_amd64.tar.gz"
-      sha256 "605761e33bebc271cc611d6620b10374e8fb22dd91d8369032b387ce0fad68db"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_linux_amd64.tar.gz"
+      sha256 "288d98a018581995d690d3b1f371e1fce0c3528be9bcc3e15d75b44f54048294"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.5/paws_0.1.5_linux_arm64.tar.gz"
-      sha256 "85a88d129813ea747574655f4c386b03c4d502124ddef301eaf11dc2d2c4f3d0"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_linux_arm64.tar.gz"
+      sha256 "dcbe139c2c217814f4716c1b908137e518ee83880dcce1bd399d379a577e9939"
     end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      # replace 'foo' with the actual binary name
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/paws"]
+    end
+    system_command "/bin/ln", args: ["-sf", "#{staged_path}/_paws", "#{HOMEBREW_PREFIX}/bin/_paws"], sudo: true
+  end
+
+  uninstall_postflight do
+    system_command "/bin/rm", args: ["#{HOMEBREW_PREFIX}/bin/_paws"], sudo: true
   end
 
   # No zap stanza required
