@@ -2,7 +2,7 @@
 cask "paws" do
   desc ""
   homepage ""
-  version "0.1.6"
+  version "0.1.7"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "paws" do
 
   on_macos do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_darwin_amd64.tar.gz"
-      sha256 "e37cf4b65af8e68c9b096fe042a50e1af5022d83f935d9ea647a23e61a5ab722"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.7/paws_0.1.7_darwin_amd64.tar.gz"
+      sha256 "55882e1b2a5d53186181dcb054a8c61ea65a6e6c83e196c6dd6d75de7becafed"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_darwin_arm64.tar.gz"
-      sha256 "c02ec357ccbf813fde3725142f1b747686af1aefe251010fde016fb0d131a8a8"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.7/paws_0.1.7_darwin_arm64.tar.gz"
+      sha256 "b246f3de8b586c4432d846972a1fb29e523f09284a56c2090f9ef70cb669d470"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_linux_amd64.tar.gz"
-      sha256 "288d98a018581995d690d3b1f371e1fce0c3528be9bcc3e15d75b44f54048294"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.7/paws_0.1.7_linux_amd64.tar.gz"
+      sha256 "891ca06dcc809ba349e97861651eab5479747f1072da6e06175eefad20bd204e"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.1.6/paws_0.1.6_linux_arm64.tar.gz"
-      sha256 "dcbe139c2c217814f4716c1b908137e518ee83880dcce1bd399d379a577e9939"
+      url "https://github.com/lzecca78/paws/releases/download/0.1.7/paws_0.1.7_linux_arm64.tar.gz"
+      sha256 "27bac9fe200dfe1665ffb0e646a376f33bd749dbbbe1133ccac3b2255f5292cb"
     end
   end
 
@@ -37,11 +37,11 @@ cask "paws" do
       # replace 'foo' with the actual binary name
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/paws"]
     end
-    system_command "/bin/ln", args: ["-sf", "#{staged_path}/_paws", "#{HOMEBREW_PREFIX}/bin/_paws"], sudo: true
+    system_command "/bin/ln", args: ["-sf", "#{staged_path}/_paws", "#{HOMEBREW_PREFIX}/bin/_paws"]
   end
 
   uninstall_postflight do
-    system_command "/bin/rm", args: ["#{HOMEBREW_PREFIX}/bin/_paws"], sudo: true
+    system_command "/bin/rm", args: ["#{HOMEBREW_PREFIX}/bin/_paws"]
   end
 
   # No zap stanza required
