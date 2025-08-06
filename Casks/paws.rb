@@ -2,7 +2,7 @@
 cask "paws" do
   desc ""
   homepage ""
-  version "0.2.4"
+  version "0.3.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "paws" do
 
   on_macos do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.2.4/paws_0.2.4_darwin_amd64.tar.gz"
-      sha256 "b4da792710c34484fc2f79c64b98b7b4a4c6e384fde403a37c2cb1ab3eba8f29"
+      url "https://github.com/lzecca78/paws/releases/download/0.3.0/paws_0.3.0_darwin_amd64.tar.gz"
+      sha256 "19965b475e60f8f98224f18dbfca88d6a5dd3f7216a8c63ed796915e17e68cf2"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.2.4/paws_0.2.4_darwin_arm64.tar.gz"
-      sha256 "491cea92f03dd09101fe0b35a1879d3e39f9ea9c33aebea0ae4fce4e1b78ea76"
+      url "https://github.com/lzecca78/paws/releases/download/0.3.0/paws_0.3.0_darwin_arm64.tar.gz"
+      sha256 "050f354dbc1798c6f05737e31c84ea5ab1cbde127df1c8474f284d9b0eed2724"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lzecca78/paws/releases/download/0.2.4/paws_0.2.4_linux_amd64.tar.gz"
-      sha256 "d4eb6c948529eb5f41dd521477d8045810210ebb20c61231d596c5e29b09fc4b"
+      url "https://github.com/lzecca78/paws/releases/download/0.3.0/paws_0.3.0_linux_amd64.tar.gz"
+      sha256 "851b8da880596e271e7775dfce468e74b98057938991315f15805202f79bd4e9"
     end
     on_arm do
-      url "https://github.com/lzecca78/paws/releases/download/0.2.4/paws_0.2.4_linux_arm64.tar.gz"
-      sha256 "60cc9d46bd5852bb21d618304fe80eebec2f4b1965b1f6ab7ec26b794b488ea7"
+      url "https://github.com/lzecca78/paws/releases/download/0.3.0/paws_0.3.0_linux_arm64.tar.gz"
+      sha256 "9a950ac226cad6edfff3bbc6706f469302c3b547a4df80dc92a66dfb0217df20"
     end
   end
 
